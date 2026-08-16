@@ -8,14 +8,16 @@ import Home from "@/pages/home";
 import Team from "@/pages/team";
 import About from "@/pages/about";
 import Events from "@/pages/events";
+import Alumini from "@/pages/alumini";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-  <Route path="/team" component={Team} />
+      <Route path="/team" component={Team} />
       <Route path="/about" component={About} />
       <Route path="/events" component={Events} />
+      <Route path="/alumini" component={Alumini} />
       <Route component={NotFound} />
     </Switch>
   );
