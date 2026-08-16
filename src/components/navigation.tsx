@@ -49,6 +49,7 @@ export default function Navigation() {
     { href: "/team", label: "Team", type: "route" as const },
     { href: "/events", label: "Events", type: "route" as const },
     { href: "/#projects-showcase", label: "Projects", type: "anchor" as const },
+    { href: "https://youtube.com", label: "Resources", type: "external" as const},
     { href: "/#contact", label: "Contact", type: "anchor" as const },
   ];
 
@@ -75,13 +76,24 @@ export default function Navigation() {
                     {item.label}
                   </a>
                 </Link>
-              ) : (
+              ) : item.type === "anchor" ? (
                 <a
                   key={item.href}
                   href={item.href}
                   className="font-mono text-green-400 hover:text-green-400 transition-colors"
                   data-testid={`nav-${item.label.toLowerCase()}`}
                   onClick={(e) => handleAnchorClick(e, item.href)}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <a
+                  key={item.href} 
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-green-400 hover:text-green-400 transition-colors"
+                  data-testid={`nav-${item.label.toLowerCase()}`}
                 >
                   {item.label}
                 </a>
@@ -116,13 +128,25 @@ export default function Navigation() {
                       {item.label}
                     </a>
                   </Link>
-                ) : (
+                ) : item.type === "anchor" ? (
                   <a
                     key={item.href}
                     href={item.href}
                     className="block w-full text-left px-3 py-2 hover:text-green-400 transition-colors"
                     data-testid={`mobile-nav-${item.label.toLowerCase()}`}
                     onClick={(e) => handleAnchorClick(e, item.href)}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <a
+                    key={item.href} 
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-left px-3 py-2 hover:text-green-400 transition-colors"
+                    data-testid={`mobile-nav-${item.label.toLowerCase()}`}
+                    onClick={() => setIsOpen(false)}
                   >
                     {item.label}
                   </a>
