@@ -4,7 +4,7 @@ interface AlumnusProps {
 export default function Alumnus({ alumnus }: AlumnusProps) {
     return (
         <div
-            className="border-2 border-green-500 bg-green-500/10 rounded-bl-xl rounded-tr-xl"
+            className="border-2 border-green-500 bg-green-500/10 rounded-bl-xl rounded-tr-xl  "
         >
 
             <div className="flex h-12 w-72 items-center justify-center  border-green-500 bg-green-500/10 px-5 rounded-br-lg">
