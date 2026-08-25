@@ -1,104 +1,65 @@
 interface AlumnusProps {
     alumnus: Alumnus
 }
+
+
+function DetailBox({detail, detailName}: {detail:string , detailName: string}) {
+    return (<div className="rounded-lg border border-green-500/20 bg-green-500/5 p-2">
+        <p className="text-xs text-gray-500">{detailName}</p>
+        <p className="mt-1 font-semibold text-gray-300 text-sm">
+            {detail}
+        </p>
+    </div>)
+}
 export default function Alumnus({ alumnus }: AlumnusProps) {
     return (
         <div
-            className="border-2 border-green-500 bg-green-500/10 rounded-bl-xl rounded-tr-xl  "
+            className="border-2 border-green-500 bg-green-500/10 rounded-xl overflow-hidden "
         >
 
-            <div className="flex h-12 w-72 items-center justify-center  border-green-500 bg-green-500/10 px-5 rounded-br-lg">
-                <h1 className=" text-center text-2xl font-bold text-white flex items-center justify-center">
+            <div className="flex h-12 w-72 items-center justify-center  border-green-500 bg-green-500/10 px-3 rounded-br-lg shadow-md backdrop-blur-sm">
+                <h1 className=" text-center text-2xl font-bold text-white">
                     {alumnus.name}
                 </h1>
             </div>
 
-            <div className="p-10">
-
-                <img
-                    src={alumnus.image}
-                    alt={alumnus.name}
-                    className="mx-auto h-32 w-32 rounded-full object-cover"
-                />
-
-                
-
-                <div className="mt-6 space-y-5">
-
-                    {/* Education */}
-                    <div>
-                        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-green-700">
-                            Education
-                        </h2>
-
-                        <div className="grid grid-cols-2 gap-3">
-                            <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-3">
-                                <p className="text-xs text-gray-500">Graduation Year</p>
-                                <p className="mt-1 font-semibold text-gray-300">
-                                    {alumnus.graduationYear}
-                                </p>
-                            </div>
-
-                            <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-3">
-                                <p className="text-xs text-gray-500">Degree</p>
-                                <p className="mt-1 font-semibold text-gray-300">
-                                    {alumnus.degree}
-                                </p>
-                            </div>
-
-                            <div className="col-span-2 rounded-lg border border-green-500/20 bg-green-500/5 p-3">
-                                <p className="text-xs text-gray-500">Branch</p>
-                                <p className="mt-1 font-semibold text-gray-300">
-                                    {alumnus.branch}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Career */}
-                    <div>
-                        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-green-700">
-                            Career
-                        </h2>
-
-                        <div className="grid grid-cols-2 gap-3">
-                            <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-3">
-                                <p className="text-xs text-gray-500">Current Role</p>
-                                <p className="mt-1 font-semibold text-gray-300">
-                                    {alumnus.currentRole}
-                                </p>
-                            </div>
-
-                            <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-3">
-                                <p className="text-xs text-gray-500">Company</p>
-                                <p className="mt-1 font-semibold text-gray-300">
-                                    {alumnus.company}
-                                </p>
-                            </div>
-
-                            <div className="col-span-2 rounded-lg border border-green-500/20 bg-green-500/5 p-3">
-                                <p className="text-xs text-gray-500">Location</p>
-                                <p className="mt-1 font-semibold text-gray-300">
-                                    {alumnus.location}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* About */}
+            <div className="grid grid-cols-1 md:grid-cols-2">
+                <div className="p-6 space-y-6">
+                    <img 
+                        src={alumnus.image}
+                        alt={alumnus.name}
+                        className="mx-auto h-32 w-32 rounded-full object-cover border-2 border-green-500/30"
+                    />
                     <div>
                         <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-green-700">
                             About
                         </h2>
 
-                        <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-4">
-                            <p className="leading-relaxed text-gray-300">
-                                {alumnus.bio}
-                            </p>
+                        <DetailBox detailName="" detail={alumnus.bio} />
+                    </div>
+                </div>
+                <div className="p-6 space-y-6">
+
+                    <div>
+                        <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-green-700">
+
+                            Career
+                        </h2>
+
+                        <div className="grid grid-cols-2 gap-3">
+                            <div className="col-span-2">
+
+                                <DetailBox detailName="Current Role" detail={alumnus.currentRole} />
+                            </div>
+                            <DetailBox detailName="Company" detail={alumnus.company} />
+
+
+                            <DetailBox detailName="Location" detail={alumnus.location} />
+
+
                         </div>
                     </div>
 
-                    {/* Social Links */}
                     <div>
                         <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-green-700">
                             Connect
@@ -108,8 +69,7 @@ export default function Alumnus({ alumnus }: AlumnusProps) {
                             <a
                                 href={alumnus.links.linkedin}
                                 target="_blank"
-                                rel="noopener noreferrer"
-                                className="rounded-lg border border-green-500/30 bg-green-500/5 px-4 py-2 font-medium text-green-700 transition hover:bg-green-500/15"
+                                className="rounded-lg border border-b-4 active:border-b active:translate-y-[2px]  border-green-500/30 bg-green-500/5 px-4 py-2 font-medium text-green-700 transition hover:bg-green-500/15 text-sm"
                             >
                                 LinkedIn
                             </a>
@@ -117,8 +77,7 @@ export default function Alumnus({ alumnus }: AlumnusProps) {
                             <a
                                 href={alumnus.links.github}
                                 target="_blank"
-                                rel="noopener noreferrer"
-                                className="rounded-lg border border-green-500/30 bg-green-500/5 px-4 py-2 font-medium text-green-700 transition hover:bg-green-500/15"
+                                className="rounded-lg border border-b-4 active:border-b active:translate-y-[2px]  border-green-500/30 bg-green-500/5 px-4 py-2 font-medium text-green-700 transition hover:bg-green-500/15 text-sm"
                             >
                                 GitHub
                             </a>
@@ -126,7 +85,9 @@ export default function Alumnus({ alumnus }: AlumnusProps) {
                     </div>
 
                 </div>
+
             </div>
+
         </div>
     );
 }
