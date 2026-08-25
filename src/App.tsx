@@ -11,6 +11,7 @@ import About from "@/pages/about";
 import Events from "@/pages/events";
 import Alumini from "@/pages/alumini";
 import Resources from "@/pages/resources";
+import Reports from "@/pages/reports";
 
 function AppRouter() {
   return (
@@ -21,6 +22,7 @@ function AppRouter() {
       <Route path="/events" component={Events} />
       <Route path="/alumini" component={Alumini} />
       <Route path="/resources" component={Resources} />
+      <Route path="/reports" component={Reports} />
       <Route component={NotFound} />
     </Switch>
   );
