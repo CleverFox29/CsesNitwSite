@@ -9,15 +9,17 @@ import Team from "@/pages/team";
 import About from "@/pages/about";
 import Events from "@/pages/events";
 import Resources from "@/pages/resources";
+import Reports from "@/pages/reports";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-  <Route path="/team" component={Team} />
+      <Route path="/team" component={Team} />
       <Route path="/about" component={About} />
       <Route path="/events" component={Events} />
       <Route path="/resources" component={Resources} />
+      <Route path="/reports" component={Reports} />
       <Route component={NotFound} />
     </Switch>
   );
