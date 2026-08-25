@@ -29,9 +29,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Router hook={useHashLocation}>
           <AppRouter />
-        </Router>
       </TooltipProvider>
     </QueryClientProvider>
   );

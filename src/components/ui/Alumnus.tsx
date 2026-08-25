@@ -17,7 +17,7 @@ export default function Alumnus({ alumnus }: AlumnusProps) {
             className="border-2 border-green-500 bg-green-500/10 rounded-xl overflow-hidden "
         >
 
-            <div className="flex h-12 w-72 items-center justify-center  border-green-500 bg-green-500/10 px-3 rounded-br-lg shadow-md backdrop-blur-sm">
+            <div className="flex h-12 w-72 items-center justify-center  border-green-500 bg-green-500/10 px-3 rounded-br-lg inset-shadow-md backdrop-blur-sm">
                 <h1 className=" text-center text-2xl font-bold text-white">
                     {alumnus.name}
                 </h1>
