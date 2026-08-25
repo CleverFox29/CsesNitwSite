@@ -9,7 +9,11 @@ import Home from "@/pages/home";
 import Team from "@/pages/team";
 import About from "@/pages/about";
 import Events from "@/pages/events";
+<<<<<<< HEAD
 import Alumini from "@/pages/alumini";
+=======
+import Resources from "@/pages/resources";
+>>>>>>> resources-page
 
 function AppRouter() {
   return (
@@ -18,7 +22,11 @@ function AppRouter() {
       <Route path="/team" component={Team} />
       <Route path="/about" component={About} />
       <Route path="/events" component={Events} />
+<<<<<<< HEAD
       <Route path="/alumini" component={Alumini} />
+=======
+      <Route path="/resources" component={Resources} />
+>>>>>>> resources-page
       <Route component={NotFound} />
     </Switch>
   );
