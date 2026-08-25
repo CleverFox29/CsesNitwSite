@@ -14,7 +14,7 @@ function DetailBox({detail, detailName}: {detail:string , detailName: string}) {
 export default function Alumnus({ alumnus }: AlumnusProps) {
     return (
         <div
-            className="border-2 border-green-500 bg-green-500/10 rounded-xl overflow-hidden "
+            className="border-2 border-green-500 bg-green-500/10 rounded-xl overflow-hidden shadow-md"
         >
 
             <div className="flex h-12 w-72 items-center justify-center  border-green-500/5 bg-green-500/10 px-3 rounded-br-lg  shadow-[inset_-4px_2px_8px_0px_rgba(0,0,0,0.3)] backdrop-blur-sm border-b border-r">
@@ -69,7 +69,7 @@ export default function Alumnus({ alumnus }: AlumnusProps) {
                             <a
                                 href={alumnus.links.linkedin}
                                 target="_blank"
-                                className="rounded-lg border border-b-4 active:border-b active:translate-y-[2px]  border-green-500/30 bg-green-500/5 px-4 py-2 font-medium text-green-700 transition hover:bg-green-500/15 text-sm"
+                                className="rounded-lg border border-b-4 active:border-b active:translate-y-[2px]  border-green-500/30 bg-green-500/5 px-4 py-2 font-medium text-green-500 transition hover:bg-green-500/15 text-sm"
                             >
                                 LinkedIn
                             </a>
@@ -77,7 +77,7 @@ export default function Alumnus({ alumnus }: AlumnusProps) {
                             <a
                                 href={alumnus.links.github}
                                 target="_blank"
-                                className="rounded-lg border border-b-4 active:border-b active:translate-y-[2px]  border-green-500/30 bg-green-500/5 px-4 py-2 font-medium text-green-700 transition hover:bg-green-500/15 text-sm"
+                                className="rounded-lg border border-b-4 active:border-b active:translate-y-[2px]  border-green-500/30 bg-green-500/5 px-4 py-2 font-medium text-green-500 transition hover:bg-green-500/15 text-sm"
                             >
                                 GitHub
                             </a>
