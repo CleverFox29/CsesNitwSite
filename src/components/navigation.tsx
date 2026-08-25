@@ -49,6 +49,7 @@ export default function Navigation() {
     { href: "/team", label: "Team", type: "route" as const },
     { href: "/events", label: "Events", type: "route" as const },
     { href: "/#projects-showcase", label: "Projects", type: "anchor" as const },
+    { href: "/resources", label: "Resources", type: "route" as const},
     { href: "/#contact", label: "Contact", type: "anchor" as const },
   ];
 
