@@ -13,7 +13,8 @@
     "skipLibCheck": true,
     "allowImportingTsExtensions": true,
     "moduleResolution": "bundler",
-    "types": ["node", "vite/client"],
+    "baseUrl": ".",
+    "types": ["node", "vite/client", "react", "react-dom"],
   "resolveJsonModule": true,
     "paths": {
       "@/*": ["./src/*"],
